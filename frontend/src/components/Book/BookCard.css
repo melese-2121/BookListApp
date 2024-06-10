@@ -1,0 +1,19 @@
+/* BookCard.css */
+
+.book-card {
+  width: "100%";
+  height: 180px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 18px;
+}
+.year {
+  background-color: cornflowerblue;
+}
+@media (max-width: 576px) {
+  .book-card {
+    width: 90%;
+    height: auto;
+  }
+}
