@@ -8,7 +8,7 @@ const Signup = () => {
   const handleSubmit = async (values, { setSubmitting }) => {
     try {
       const response = await axios.post(
-        "https://booklistapp-rxx8.onrender.com/users/signup",
+        "https://booklistapp-rxx8.onrender.com/api/users/signup",
         values
       );
       console.log("Signup successful:", response.data);
