@@ -9,7 +9,7 @@ function BookDetail() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/books/${id}`)
+      .get(`https://booklistapp-rxx8.onrender.com/api/books/${id}`)
       .then((response) => {
         console.log(book);
         setBook(response.data);

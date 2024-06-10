@@ -11,14 +11,14 @@ function DeleteBook() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/books/${id}`)
+      .get(`https://booklistapp-rxx8.onrender.com/api/books/${id}`)
       .then((response) => setBook(response.data))
       .catch((error) => console.error(error));
   }, [id]);
 
   const handleDelete = () => {
     axios
-      .delete(`http://localhost:5000/api/books/${id}`)
+      .delete(`https://booklistapp-rxx8.onrender.com/api/books/${id}`)
       .then(() => navigate("/"))
       .catch((error) => console.error(error));
   };

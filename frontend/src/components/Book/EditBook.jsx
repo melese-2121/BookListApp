@@ -13,7 +13,7 @@ function EditBook() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/api/books/${id}`) // Fetch book details by id
+      .get(`https://booklistapp-rxx8.onrender.com/api/books/${id}`) // Fetch book details by id
       .then((response) => {
         const book = response.data;
         setTitle(book.title);
@@ -27,7 +27,7 @@ function EditBook() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:5000/api/books/${id}`, {
+      .put(`https://booklistapp-rxx8.onrender.com/api/books/${id}`, {
         title,
         author,
         description,

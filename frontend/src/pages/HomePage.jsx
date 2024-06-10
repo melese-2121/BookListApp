@@ -9,7 +9,7 @@ const HomePage = () => {
   const [books, setBooks] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/books")
+      .get("https://booklistapp-rxx8.onrender.com/api/books")
       .then((response) => setBooks(response.data))
       .catch((error) => console.error(error));
   }, []);
