@@ -2,17 +2,24 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import axios from "axios";
 import SignupSchema from "../../validation/signupSchema"; // Import the schema
 import "./Signup.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Signup = () => {
+  const navigate = useNavigate();
+
   const handleSubmit = async (values, { setSubmitting }) => {
     try {
       const response = await axios.post(
         "https://booklistapp-rxx8.onrender.com/api/users/signup",
         values
       );
-      console.log("Signup successful:", response.data);
-      // Redirect to login or another page if needed
+
+      if (response.data["message"] === "User created successfully") {
+        console.log(response.data);
+        localStorage.setItem("username", values.username); // Save username to local storage
+        localStorage.setItem("password", values.password); // Save password to local storage
+        navigate("/");
+      }
     } catch (error) {
       console.error("There was an error signing up:", error);
     } finally {
